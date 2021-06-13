@@ -3,9 +3,9 @@ package com.example.provapraticaimc.dto;
 public class ImcDto {
      private float peso;
      private String imc;
-    public ImcDto(float peso, float altura) {
+    public ImcDto(float peso, double altura) {
     	this.peso = peso;
-    	float pesoimc = peso/(altura * altura);
+    	double pesoimc = peso/(altura * altura);
 		if (pesoimc < 18.5) {
 			this.imc = "Abaixo do Peso";
 		}

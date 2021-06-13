@@ -12,7 +12,7 @@ import com.example.provapraticaimc.dto.ImcDto;
 @RequestMapping("/imc")
 public class ImController {
 	@GetMapping
-	public ResponseEntity<ImcDto> calcular(@RequestParam float peso, float altura){
-		return ResponseEntity.ok(new ImcDto(peso, altura));
+	public ResponseEntity<ImcDto> calcular(@RequestParam float peso, double altura){
+		return ResponseEntity.ok(new ImcDto(peso, altura=1.80));
 	}
 }
