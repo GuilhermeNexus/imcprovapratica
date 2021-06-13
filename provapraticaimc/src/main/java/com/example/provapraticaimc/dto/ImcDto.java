@@ -1,11 +1,15 @@
 package com.example.provapraticaimc.dto;
 
+import java.util.List;
+
 public class ImcDto {
-     private float peso;
+     private double peso;
      private String imc;
-    public ImcDto(float peso, double altura) {
-    	this.peso = peso;
-    	double pesoimc = peso/(altura * altura);
+    public ImcDto(List<String> pesoaltura) {
+    	double pesokg = Double.parseDouble(pesoaltura.get(0));
+    	double altura = Double.parseDouble(pesoaltura.get(1));
+    	this.peso =  pesokg;
+    	double pesoimc = this.peso/(altura * altura);
 		if (pesoimc < 18.5) {
 			this.imc = "Abaixo do Peso";
 		}
@@ -25,7 +29,7 @@ public class ImcDto {
 			 this.imc = "Obesidade Grau 3";
 		}
     }
-	public float getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 	public void setPeso(float peso) {

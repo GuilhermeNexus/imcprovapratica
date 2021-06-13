@@ -1,5 +1,7 @@
 package com.example.provapraticaimc.model;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,7 @@ import com.example.provapraticaimc.dto.ImcDto;
 @RequestMapping("/imc")
 public class ImController {
 	@GetMapping
-	public ResponseEntity<ImcDto> calcular(@RequestParam float peso, double altura){
-		return ResponseEntity.ok(new ImcDto(peso, altura=1.80));
+	public ResponseEntity<ImcDto> calcular(@RequestParam List<String> pesoaltura){
+		return ResponseEntity.ok(new ImcDto(pesoaltura));
 	}
 }
