@@ -9,7 +9,7 @@ public class Home {
 	@RequestMapping("/")
 	@ResponseBody
 	public String Hello() {
-		return "Digite /imc?peso=**** sendo (****) o peso, para achar o imc";
+		return "Digite /imc?pesoaltura=****,**** sendo o primeiro (****) o peso e depois da (,) digite a altura no lugar dos (****) , para achar o imc";
 	}
 
 }
